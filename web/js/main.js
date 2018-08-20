@@ -1,4 +1,5 @@
-let gl; // Un variable global para el contexto WebGL
+let gl; // Una variable global para el contexto WebGL
+let deltaTime; // Tiempo
 
 function main() {
     const canvas = document.getElementById("glcanvas");
@@ -27,5 +28,18 @@ function main() {
         },
     };
     const buf = initBuffers(gl);
-    drawScene(gl, programInfo, buf);
+
+    let then = 0;
+
+    // Draw the scene repeatedly
+    function render(now) {
+        now *= 0.001;  // convert to seconds
+        deltaTime = now - then;
+        then = now;
+
+        drawScene(gl, programInfo, buf, deltaTime);
+
+        requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
 }

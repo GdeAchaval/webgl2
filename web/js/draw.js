@@ -1,3 +1,5 @@
+let cubeRotation = 0.0;
+
 function drawScene(gl, programInfo, buffers) {
     gl.clearColor(0.0, 0.0, 0.0, 1.0);  // Clear to black, fully opaque
     gl.clearDepth(1.0);                 // Clear everything
@@ -40,10 +42,14 @@ function drawScene(gl, programInfo, buffers) {
         modelViewMatrix,     // matrix to translate
         [-0.0, 0.0, -6.0]);  // amount to translate
 
+    mat4.rotate(modelViewMatrix, modelViewMatrix, cubeRotation * .7, [0, 1, 0]);
+    mat4.rotate(modelViewMatrix, modelViewMatrix, cubeRotation, [1, 0, 0]);
+
+
     // Tell WebGL how to pull out the positions from the position
     // buffer into the vertexPosition attribute.
     {
-        const numComponents = 2;  // pull out 2 values per iteration
+        const numComponents = 3;  // pull out 3 values per iteration
         const type = gl.FLOAT;    // the data in the buffer is 32bit floats
         const normalize = false;  // don't normalize
         const stride = 0;         // how many bytes to get from one set of values to the next
@@ -77,8 +83,9 @@ function drawScene(gl, programInfo, buffers) {
         modelViewMatrix);
 
     {
+        const vertexCount = 36;
+        const type = gl.UNSIGNED_SHORT;
         const offset = 0;
-        const vertexCount = 4;
-        gl.drawArrays(gl.TRIANGLE_STRIP, offset, vertexCount);
+        gl.drawElements(gl.TRIANGLES, vertexCount, type, offset);
     }
 }

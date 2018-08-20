@@ -10,7 +10,6 @@ function initWebGL(canvas) {
     // Si no tenemos ningun contexto GL, date por vencido ahora
     if (!gl) {
         alert("Imposible inicializar WebGL. Tu navegador puede no soportarlo.");
-        gl = null;
     }
 
     return gl;
