@@ -13,6 +13,6 @@ public class PlaneServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/index2.jsp").forward(request, response);
+        request.getRequestDispatcher("/scene.jsp").forward(request, response);
     }
 }

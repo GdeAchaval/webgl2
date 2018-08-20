@@ -15,6 +15,7 @@
 <body>
 
 <script src="js/three/three.min.js"></script>
+<script src="js/three/TrackballControls.js"></script>
 <script src="js/three/scene.js"></script>
 
 </body>
