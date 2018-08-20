@@ -3,10 +3,10 @@
 </body>
 
 
-<script src="js/gl-matrix-min.js"></script>
-<script src="js/initShader.js"></script>
-<script src="js/main.js"></script>
-<script src="js/draw.js"></script>
-<script src="js/initBuffer.js"></script>
-<script src="js/initWebGL.js"></script>
-<script src="js/shaderConfig.js"></script>
+<script src="js/pureGL/gl-matrix-min.js"></script>
+<script src="js/pureGL/initShader.js"></script>
+<script src="js/pureGL/main.js"></script>
+<script src="js/pureGL/draw.js"></script>
+<script src="js/pureGL/initBuffer.js"></script>
+<script src="js/pureGL/initWebGL.js"></script>
+<script src="js/pureGL/shaderConfig.js"></script>

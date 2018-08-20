@@ -88,4 +88,6 @@ function drawScene(gl, programInfo, buffers) {
         const offset = 0;
         gl.drawElements(gl.TRIANGLES, vertexCount, type, offset);
     }
+
+    cubeRotation += deltaTime;
 }
